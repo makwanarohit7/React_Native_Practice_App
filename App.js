@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import FeedBack from "./Components/FeedBack";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import MenuItem from "./Components/MenuItem";
@@ -11,7 +12,8 @@ export default function App() {
       <View style={{ flex: 1, backgroundColor: "#495E57" }}>
         <Header />
         {/* <Welcome /> */}
-        <MenuItem />
+        {/* <MenuItem /> */}
+        <FeedBack />
       </View>
       <View style={{ backgroundColor: "#495E57" }}>
         <Footer />
