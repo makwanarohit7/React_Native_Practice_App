@@ -1,12 +1,23 @@
 import * as React from "react";
-import { View, Text, StyleSheet, TextInput, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  Platform,
+} from "react-native";
 import { useState } from "react";
 export default function FeedBack() {
   const [firstName, onChangeFirstName] = React.useState("");
   const [lastName, onChangeLastName] = React.useState("");
   const [message, onChangeMessage] = React.useState("");
   return (
-    <ScrollView keyboardDismissMode="on-drag" style={styles.container}>
+    <ScrollView
+      keyboardDismissMode="on-drag"
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
       <TextInput
         style={styles.inputBox}
         value={firstName}
