@@ -6,7 +6,7 @@ export default function FeedBack() {
   const [lastName, onChangeLastName] = React.useState("");
   const [message, onChangeMessage] = React.useState("");
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView keyboardDismissMode="on-drag" style={styles.container}>
       <TextInput
         style={styles.inputBox}
         value={firstName}
