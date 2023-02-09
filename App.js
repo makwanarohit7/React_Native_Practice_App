@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import FeedBack from "./Components/FeedBack";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import Login from "./Components/Login";
 import MenuItem from "./Components/MenuItem";
 import Welcome from "./Components/Welcome";
 
@@ -13,7 +14,8 @@ export default function App() {
         <Header />
         {/* <Welcome /> */}
         {/* <MenuItem /> */}
-        <FeedBack />
+        {/* <FeedBack /> */}
+        <Login />
       </View>
       <View style={{ backgroundColor: "#495E57" }}>
         <Footer />
