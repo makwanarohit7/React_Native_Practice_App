@@ -13,7 +13,7 @@ export default function Welcome() {
     <ScrollView
       style={[
         styles.container,
-        colorScheme === "light"
+        colorScheme === "dark"
           ? { backgroundColor: "#fff" }
           : { backgroundColor: "#333333" },
       ]}
