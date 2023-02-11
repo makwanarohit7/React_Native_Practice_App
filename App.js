@@ -10,31 +10,22 @@ import Welcome from "./Components/Welcome";
 import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+const Drawer = createDrawerNavigator();
 // const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+
 export default function App() {
   return (
     <>
       <NavigationContainer>
         <View style={styles.container}>
           <Header />
-          <Tab.Navigator
-            screenOptions={({ route }) => ({
-              tabBarIcon: ({ size }) => {
-                let iconName;
-                if (route.name === "Welcome") {
-                  iconName = "ios-home";
-                } else if (route.name === "Login") {
-                  iconName = "ios-enter";
-                }
-                return <Ionicons name={iconName} size={size} />;
-              },
-            })}
-            initialRouteName="Login"
-          >
-            <Tab.Screen name="Welcome" component={Welcome} />
-            <Tab.Screen name="Login" component={Login} />
-          </Tab.Navigator>
+          <Drawer.Navigator useLegacyImplementation initialRouteName="Login">
+            <Drawer.Screen name="Welcome" component={Welcome} />
+            <Drawer.Screen name="Login" component={Login} />
+          </Drawer.Navigator>
         </View>
         <View style={styles.footerContainer}>
           <Footer />
