@@ -8,18 +8,33 @@ import Login from "./Components/Login";
 import MenuItem from "./Components/MenuItem";
 import Welcome from "./Components/Welcome";
 import { NavigationContainer } from "@react-navigation/native";
-
-const Stack = createNativeStackNavigator();
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <>
       <NavigationContainer>
         <View style={styles.container}>
           <Header />
-          <Stack.Navigator initialRouteName="Login">
-            <Stack.Screen name="Welcome" component={Welcome} />
-            <Stack.Screen name="Login" component={Login} />
-          </Stack.Navigator>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ size }) => {
+                let iconName;
+                if (route.name === "Welcome") {
+                  iconName = "ios-home";
+                } else if (route.name === "Login") {
+                  iconName = "ios-enter";
+                }
+                return <Ionicons name={iconName} size={size} />;
+              },
+            })}
+            initialRouteName="Login"
+          >
+            <Tab.Screen name="Welcome" component={Welcome} />
+            <Tab.Screen name="Login" component={Login} />
+          </Tab.Navigator>
         </View>
         <View style={styles.footerContainer}>
           <Footer />
