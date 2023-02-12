@@ -7,6 +7,7 @@ import Header from "./Components/Header";
 import Login from "./Components/Login";
 import MenuItem from "./Components/MenuItem";
 import Welcome from "./Components/Welcome";
+import Customer from "./Components/Customer";
 import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -22,10 +23,10 @@ export default function App() {
       <NavigationContainer>
         <View style={styles.container}>
           <Header />
-          <Stack.Navigator initialRouteName="Login">
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Welcome" component={Welcome} />
-            <Stack.Screen name="Menu" component={MenuItem} />
+          <Stack.Navigator initialRouteName="Customer">
+            {/* <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Welcome" component={Welcome} /> */}
+            <Stack.Screen name="Customer" component={Customer} />
           </Stack.Navigator>
         </View>
         <View style={styles.footerContainer}>
