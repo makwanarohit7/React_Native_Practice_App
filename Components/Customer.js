@@ -15,7 +15,7 @@ import {
   Dialog,
   Button,
 } from "react-native-paper";
-import asyncAlert from "../asyncAlert";
+import asyncAlert from "./asyncAlert";
 
 const db = SQLite.openDatabase("little_lemon");
 
