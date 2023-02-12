@@ -5,9 +5,10 @@ import {
   StyleSheet,
   Image,
   useColorScheme,
+  Pressable,
 } from "react-native";
 
-export default function Welcome() {
+export default function Welcome({ navigation }) {
   const colorScheme = useColorScheme();
   return (
     <ScrollView
@@ -34,6 +35,12 @@ export default function Welcome() {
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
+      <Pressable
+        onPress={() => navigation.navigate("Menu")}
+        style={styles.button}
+      >
+        <Text style={styles.buttonText}>Show Menu</Text>
+      </Pressable>
     </ScrollView>
   );
 }
@@ -67,5 +74,20 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 20,
+  },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 100,
+    backgroundColor: "#F4CE14",
+    borderColor: "#F4CE14",
+    borderWidth: 2,
+    borderRadius: 50,
+  },
+  buttonText: {
+    color: "black",
+    textAlign: "center",
+    fontSize: 25,
   },
 });

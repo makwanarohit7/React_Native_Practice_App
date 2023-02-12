@@ -12,8 +12,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-const Drawer = createDrawerNavigator();
-// const Stack = createNativeStackNavigator();
+// const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 // const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -22,10 +22,11 @@ export default function App() {
       <NavigationContainer>
         <View style={styles.container}>
           <Header />
-          <Drawer.Navigator useLegacyImplementation initialRouteName="Login">
-            <Drawer.Screen name="Welcome" component={Welcome} />
-            <Drawer.Screen name="Login" component={Login} />
-          </Drawer.Navigator>
+          <Stack.Navigator initialRouteName="Login">
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="Menu" component={MenuItem} />
+          </Stack.Navigator>
         </View>
         <View style={styles.footerContainer}>
           <Footer />

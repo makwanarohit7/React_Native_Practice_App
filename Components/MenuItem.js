@@ -78,6 +78,7 @@ export default MenuItem;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#333333",
   },
   innerContainer: {
     paddingHorizontal: 40,
